@@ -37,14 +37,37 @@ Usamos a biblioteca Python chamada Pandas para convertermos os dados, que foram 
 
 --- Print do dataframe
 
-Separaremos os dados em 2 tabelas diferentes, a primeira sendo uma tabela mais geral, com os dados das 10 criptomoedas com mais movimentações e a segunda contendo alguns valores mais esecíficos, como porcentagem de flutuação de valor num período de 24 horas, por exemplo.
+Separaremos os dados em 2 dataframes diferentes, o primeiro sendo um dataframes mais geral, com os dados das 100 criptomoedas com mais movimentações e o segundo contendo alguns valores mais específicos, como porcentagem de flutuação de valor num período de 24 horas das mesmas 100 criptomoedas com mais movimentações, por exemplo. 
+Vamos converter os dataframes para csv, o que nos facilitará mais tarde, ao mexermos no GCP.
 
-## Limpeza e tratamento dos dados brutos:
+## Criação das tabelas:
 
-Começaremos a limpeza e o tratamento dos dados brutos analisando se precisaremos fazer algum retoque ou mudança nos dados trazidos da API. Para isso, visualizamos as 2 tabelas, afim de verificarmos se o conteúdo delas está, aparentemente, correto.
+Criaremos as tabelas usando serviços do Google Cloud Plataform, especificamente, neste momento, o Cloud Storage.
+Primeiro criamos um Bucket, que armazenará os nossos dados na nuvem para, posteriormente, esses mesmos dados serem usados por outros serviços do GCP.
 
---- print df
+--- Print Criação bucket
+
+Com isso, fazemos o upload dos arquivos csv, que são os dataframes antes confeccionados.
+
+--- Print bucket com os csv
+
+Agora, criamos um ?? para armazenarmos nossas tabelas:
+
+--- Print do ???
+
+Com o ?? criado, podemos criar tabelas no Cloud Storage do GCP, acessando a opção ??? após clicar em "Criar tabela", dentro do ??? criado, selecionado a opção "Google Cloud ???" e procurando no ??? os arquivos csv que foram colocados no bucket, anteriormente.
+
+Usaremos a opção "Editar texto" na parte de "Esquema", pois, gerar automaticamente um Esquema pode nos trazer problemas futuros, como permitir que o usuário coloque valores nulos onde não poderia ser possível tal ato, por exemplo.
+
+Com isso, criamos as tabelas "tabela_geral" e "tabela_valores" contendo, respectivamente, informações gerais das 100 criptomoedas mais movimentadas e informações mais específicas das mesmas.
+
+- Print do preview das tabelas
 
 Para um volume de dados como esse, isto é, bem baixo, podemos fazer essa análise olhando uma por uma, mas, caso estivéssemos trabalhando com Big Data ou mesmo com banco de dados mais extensos, precisaríamos ser mais generalistas e fazer os tratamentos mais comuns e gerais que são empregados na engenharia de dados, como por exemplo: exclusão de arquivos NULL, exclusão de arquivos falsos ou com erros grotescos, modificação de simbologia de números (geralmente mudando de , para .), entre outros.
 
-## 
+## Sugestão de futuras implementações e melhorias:
+
+Seguem algumas sugestões de implemetações e melhorias para esse projeto, para que, num futuro, seja mais completo e entregue mais valor:
+  - Uma aplicação web interativa, que permitam várias análises do usuário a partir dos dados que foram incluídos na tabela_geral e tabela_valores;
+  - Um chatbot automatizado com langchain que responda questões, como um ChatGPT, sobre os dados contidos na tabela_geral e tabela_valores;
+  - Um dashboard no Looker, contendo diversas informações, gráficos interativos e insights sobre os dados na tabela_geral e tabela_valores. 

@@ -10,15 +10,15 @@ O desafio consiste em criar uma aplicação Python que seja capaz de acessar uma
 
 <img src="images/arquitetura miro.jpg">
 
-- Conexão com a API utilizando Python
-- Salvamento dos dados puxados obtidos em tabela no GCP
-- Tratamento e limpeza iniciais dos dados
-- Salvamento dos dados puxados na camada prata
-- Revisão e tratamento mais aprimorado dos dados
-- Salvamento dos dados puxados na camada ouro
-- Opcional:
-  - Usar dashboards para demonstração;
-  - Web app com Streamlit;
+- Conexão com a API utilizando Python;
+- Download dos dados obtidos pela API;
+- Conversão dos dados para dataframe utilizando Pandas;
+- Conversão dos dataframes para csv utilizando Pandas;
+- Criação de um bucket no Cloud Storage do GCP;
+- Carregamento dos dados trazidos pela API e convertidos para csv para o bucket do Cloud Storage do GCP;
+- Criação de um banco de dados no BigQuery do GCP;
+- Criação de tabelas no banco de dados criado, utilizando os dados em csv que foram carregados no bucket;
+- Criação de esquemas para as tabelas.
 
 Ao final, sugerir futuras implantações e melhorias para o projeto, como por exemplo, chatbot com LLM, web app, etc.
 
@@ -47,11 +47,11 @@ Com isso, fazemos o upload dos arquivos csv, que são os dataframes antes confec
 
 <img src="images/bucket_crypto_challenge.png">
 
-Agora, criamos uma base de dados para armazenarmos nossas tabelas, chamada etc_db:
+Agora, criamos, no BigQuery, uma base de dados para armazenarmos nossas tabelas, chamada etc_db:
 
 <img src="images/database.png">
 
-Com o ?? criado, podemos criar tabelas no Cloud Storage do GCP, acessando a opção ??? após clicar em "Criar tabela", dentro do ??? criado, selecionado a opção "Google Cloud ???" e procurando no ??? os arquivos csv que foram colocados no bucket, anteriormente.
+Com o banco de dados criado, podemos criar as tabelas finais, clicando em "Criar tabela" no banco de dados criado. Logo em seguida, seleciona-se a opção "Google Cloud Storage" e depois procura-se os arquivos csv que foram carregados no bucket.
 
 Usaremos a opção "Editar texto" na parte de "Esquema", pois, gerar automaticamente um Esquema pode nos trazer problemas futuros, como permitir que o usuário coloque valores nulos onde não poderia ser possível tal ato, por exemplo.
 

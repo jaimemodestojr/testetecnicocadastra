@@ -1,0 +1,1 @@
+cryptomarket_api_access_key = "Aqui entra a sua key"

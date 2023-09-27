@@ -1,0 +1,27 @@
+[
+    {
+        "mode": "REQUIRED",
+        "name":"ID",
+        "type": "INTEGER"
+    },
+    {
+        "mode": "REQUIRED",
+        "name":"Name",
+        "type": "STRING"  
+    },
+    {
+        "mode": "REQUIRED",
+        "name":"Slug",
+        "type": "STRING"
+    },
+    {
+        "mode": "REQUIRED",
+        "name": "Symbol",
+        "type": "STRING"
+    },
+    {
+        "mode": "REQUIRED",
+        "name": "Price",
+        "type": "FLOAT"
+    }
+]

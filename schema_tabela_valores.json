@@ -1,0 +1,32 @@
+[
+    {
+        "mode": "REQUIRED",
+        "name":"name",
+        "type": "string"
+    },
+    {
+        "mode": "REQUIRED",
+        "name":"circulating_supply",
+        "type": "float"  
+    },
+    {
+        "mode": "REQUIRED",
+        "name":"price",
+        "type": "float"
+    },
+    {
+        "mode": "REQUIRED",
+        "name": "market_cap",
+        "type": "float"
+    },
+    {
+        "mode": "REQUIRED",
+        "name": "percent_change_24h",
+        "type": "float"
+    },
+    {
+        "mode": "REQUIRED",
+        "name": "volume_24h",
+        "type": "float"
+    }
+]

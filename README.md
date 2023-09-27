@@ -8,7 +8,7 @@ O desafio consiste em criar uma aplicação Python que seja capaz de acessar uma
 
 ## Arquitetura planejada para o desafio:
 
---- arquitetura Miro
+<img src="images/arquitetura miro.jpg">
 
 - Conexão com a API utilizando Python
 - Salvamento dos dados puxados obtidos em tabela no GCP

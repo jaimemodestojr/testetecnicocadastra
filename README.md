@@ -37,11 +37,11 @@ Usamos a biblioteca Python chamada Pandas para convertermos os dados, que foram 
 
 --- Print do dataframe
 
-Separaremos os dados em 11 tabelas diferentes, a primeira sendo uma tabela mais geral, com os dados das 10 criptomoedas com mais movimentações e, as 10 subsequentes, serão tabelas com detalhamento de cada uma dessas 10 criptomoedas ditas anteriormente.
+Separaremos os dados em 2 tabelas diferentes, a primeira sendo uma tabela mais geral, com os dados das 10 criptomoedas com mais movimentações e a segunda contendo alguns valores mais esecíficos, como porcentagem de flutuação de valor num período de 24 horas, por exemplo.
 
 ## Limpeza e tratamento dos dados brutos:
 
-Começaremos a limpeza e o tratamento dos dados brutos analisando se precisaremos fazer algum retoque ou mudança nos dados trazidos da API. Para isso, visualizamos cada uma das 11 tabelas, afim de verificarmos se o conteúdo delas está, aparentemente, correto.
+Começaremos a limpeza e o tratamento dos dados brutos analisando se precisaremos fazer algum retoque ou mudança nos dados trazidos da API. Para isso, visualizamos as 2 tabelas, afim de verificarmos se o conteúdo delas está, aparentemente, correto.
 
 --- print df
 

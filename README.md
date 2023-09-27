@@ -31,10 +31,12 @@ Devemos salvar os dados sensíveis de acesso a API, como a nossa key individual,
 
 Ingerimos, a partir da API da Crypto Market Cap, os dados das 100 criptomoedas com mais movimentações no presente momento da ingestão dos dados.
 Usamos a biblioteca Python chamada Pandas para convertermos os dados, que foram ingeridos em formato json, para o formato dataframe, o que nos facilitará imensamente o trabalho de manipulação dos dados.
-
---- Print do dataframe
-
 Separaremos os dados em 2 dataframes diferentes, o primeiro sendo um dataframes mais geral, com os dados das 100 criptomoedas com mais movimentações e o segundo contendo alguns valores mais específicos, como porcentagem de flutuação de valor num período de 24 horas das mesmas 100 criptomoedas com mais movimentações, por exemplo. 
+
+<img src="images/df_geral.png">
+
+<img src="images/df_values.png">
+
 Vamos converter os dataframes para csv, o que nos facilitará mais tarde, ao mexermos no GCP.
 
 ## Criação das tabelas:
@@ -43,11 +45,11 @@ Criaremos as tabelas usando serviços do Google Cloud Plataform, especificamente
 Primeiro criamos um Bucket, que armazenará os nossos dados na nuvem para, posteriormente, esses mesmos dados serem usados por outros serviços do GCP.
 Com isso, fazemos o upload dos arquivos csv, que são os dataframes antes confeccionados.
 
---- Print bucket com os csv
+<img src="images/bucket_crypto_challenge.png">
 
 Agora, criamos uma base de dados para armazenarmos nossas tabelas, chamada etc_db:
 
---- Print do banco de dados
+<img src="images/database.png">
 
 Com o ?? criado, podemos criar tabelas no Cloud Storage do GCP, acessando a opção ??? após clicar em "Criar tabela", dentro do ??? criado, selecionado a opção "Google Cloud ???" e procurando no ??? os arquivos csv que foram colocados no bucket, anteriormente.
 
@@ -55,7 +57,8 @@ Usaremos a opção "Editar texto" na parte de "Esquema", pois, gerar automaticam
 
 Com isso, criamos as tabelas "tabela_geral" e "tabela_valores" contendo, respectivamente, informações gerais das 100 criptomoedas mais movimentadas e informações mais específicas das mesmas.
 
---- Print do preview das tabelas
+<img src="images/tabela_geral_preview.png">
+<img src="images/tabela_valores_preview.png">
 
 Para um volume de dados como esse, isto é, bem baixo, podemos fazer essa análise olhando uma por uma, mas, caso estivéssemos trabalhando com Big Data ou mesmo com banco de dados mais extensos, precisaríamos ser mais generalistas e fazer os tratamentos mais comuns e gerais que são empregados na engenharia de dados, como por exemplo: exclusão de arquivos NULL, exclusão de arquivos falsos ou com erros grotescos, modificação de simbologia de números (geralmente mudando de , para .), entre outros.
 

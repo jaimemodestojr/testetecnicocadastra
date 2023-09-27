@@ -8,7 +8,7 @@ O desafio consiste em criar uma aplicação Python que seja capaz de acessar uma
 
 ## Arquitetura planejada para o desafio:
 
--- Diagrama do Miro --
+--- arquitetura Miro
 
 - Conexão com a API utilizando Python
 - Salvamento dos dados puxados obtidos em tabela no GCP
@@ -29,10 +29,7 @@ Devemos salvar os dados sensíveis de acesso a API, como a nossa key individual,
 
 ## Ingestão dos dados:
 
-Ingerimos, a partir da API da Crypto Market Cap, os dados das 10 criptomoedas com mais movimentações no presente momento da ingestão dos dados. São elas:
-
---- Print da tabela
-
+Ingerimos, a partir da API da Crypto Market Cap, os dados das 100 criptomoedas com mais movimentações no presente momento da ingestão dos dados.
 Usamos a biblioteca Python chamada Pandas para convertermos os dados, que foram ingeridos em formato json, para o formato dataframe, o que nos facilitará imensamente o trabalho de manipulação dos dados.
 
 --- Print do dataframe
@@ -44,16 +41,13 @@ Vamos converter os dataframes para csv, o que nos facilitará mais tarde, ao mex
 
 Criaremos as tabelas usando serviços do Google Cloud Plataform, especificamente, neste momento, o Cloud Storage.
 Primeiro criamos um Bucket, que armazenará os nossos dados na nuvem para, posteriormente, esses mesmos dados serem usados por outros serviços do GCP.
-
---- Print Criação bucket
-
 Com isso, fazemos o upload dos arquivos csv, que são os dataframes antes confeccionados.
 
 --- Print bucket com os csv
 
-Agora, criamos um ?? para armazenarmos nossas tabelas:
+Agora, criamos uma base de dados para armazenarmos nossas tabelas, chamada etc_db:
 
---- Print do ???
+--- Print do banco de dados
 
 Com o ?? criado, podemos criar tabelas no Cloud Storage do GCP, acessando a opção ??? após clicar em "Criar tabela", dentro do ??? criado, selecionado a opção "Google Cloud ???" e procurando no ??? os arquivos csv que foram colocados no bucket, anteriormente.
 
@@ -61,7 +55,7 @@ Usaremos a opção "Editar texto" na parte de "Esquema", pois, gerar automaticam
 
 Com isso, criamos as tabelas "tabela_geral" e "tabela_valores" contendo, respectivamente, informações gerais das 100 criptomoedas mais movimentadas e informações mais específicas das mesmas.
 
-- Print do preview das tabelas
+--- Print do preview das tabelas
 
 Para um volume de dados como esse, isto é, bem baixo, podemos fazer essa análise olhando uma por uma, mas, caso estivéssemos trabalhando com Big Data ou mesmo com banco de dados mais extensos, precisaríamos ser mais generalistas e fazer os tratamentos mais comuns e gerais que são empregados na engenharia de dados, como por exemplo: exclusão de arquivos NULL, exclusão de arquivos falsos ou com erros grotescos, modificação de simbologia de números (geralmente mudando de , para .), entre outros.
 

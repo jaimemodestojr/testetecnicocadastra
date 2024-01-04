@@ -1,4 +1,4 @@
-# Exemplo de desafio técnico - área de dados:
+# Exemplo de desafio técnico - engenharia de dados:
 
 O desafio técnico consiste na coleta e armazenamento de dados de criptomoedas, cujo qual servirá, principalmente, para avaliar as habilidades técnicas na linguagem de programação Python, a capacidade analítica, o conhecimento em boas práticas de programação e a habilidade na manipulação de dados. O objetivo principal é desenvolver um programa que consuma dados de uma API de criptomoedas e os armazene em um banco de dados.
 
